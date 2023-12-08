@@ -12,13 +12,24 @@
     <input type="text" id="content" name="content"><br><br>
 
     <div id="advancedFeatures" style="display: none;">
+      
+      <label for="format">Choose Output Format:</label>
+      <select id="format" name="format">
+            <option value="HTML">HTML</option>
+            <option value="Markdown">Markdown</option>
+            <option value="LaTeX">LaTeX</option>
+            <option value="Plain Text">Plain Text</option>                        
+      </select><br><br>
+      
       <label for="model">Choose a Model:</label>
-      <select id="model" name="model">
-          <option value="gpt-4">gpt-4</option>
+      <select id="model" name="model">          
           <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
           <option value="gpt-3.5-turbo-1106">gpt-3.5-turbo-1106</option>
           <option value="gpt-3.5-turbo-0613">gpt-3.5-turbo-0613</option>
+          <option value="gpt-4">gpt-4</option>
       </select><br><br>
+
+      
     </div>
   <a href="#" onclick="toggleAdvancedFeatures()" class="advanced-features-link">Advanced Features</a>
 
