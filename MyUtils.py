@@ -1,3 +1,18 @@
+#from openai import OpenAI
+
+class MyClient:
+    def __init__(self):
+      _client = OpenAIClient(api_key=os.environ['OPENAI_API_KEY'])
+
+    def request_gpt(self, data):
+      _response = _client.chat.completions.create(
+        model=data["model"],
+        messages=data["messages"],
+      )
+      return _response.choices[0].message.content
+    
+
+
 
 
 # Function to format the dictionary based on inputs

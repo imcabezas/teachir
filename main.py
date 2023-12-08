@@ -1,8 +1,12 @@
-from MyUtils import *
 from flask import Flask, render_template, request, jsonify
+import pytest
+from MyUtils import *
+import os
+
 
 
 app = Flask(__name__)
+clientObj = MyClient()
 
 
 
@@ -26,7 +30,8 @@ def submit():
     model = request.form.get('model') 
     format = request.form.get('format')    
     prompt = format_dict(deliverable, subject, content, model, format)
-    return render_template('result.html',content=prompt)
+    response = clientObj.request_gpt(prompt)  
+    return render_template('result.html',content=response)
     
 
 app.run(host='0.0.0.0', port=81)
