@@ -1,0 +1,40 @@
+
+<form action="/submit" method="post">
+
+
+    <label for="deliverable">Deliverable:</label>
+    <input type="text" id="deliverable" name="deliverable"><br><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject"><br><br>
+
+    <label for="content">Content:</label>
+    <input type="text" id="content" name="content"><br><br>
+
+    <div id="advancedFeatures" style="display: none;">
+      <label for="model">Choose a Model:</label>
+      <select id="model" name="model">
+          <option value="gpt-4">gpt-4</option>
+          <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+          <option value="gpt-3.5-turbo-1106">gpt-3.5-turbo-1106</option>
+          <option value="gpt-3.5-turbo-0613">gpt-3.5-turbo-0613</option>
+      </select><br><br>
+    </div>
+  <a href="#" onclick="toggleAdvancedFeatures()" class="advanced-features-link">Advanced Features</a>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+
+
+<script>
+    function toggleAdvancedFeatures() {
+        var x = document.getElementById("advancedFeatures");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
